@@ -11,13 +11,10 @@
 /* ************************************************************************** */
 
 /*
-* Escriba un programa que reciba una cadena y la muestre, 
-* reemplazando cada una de sus letras por la letra 13 espacios por delante en orden alfabético
-*
-* z se convierte en m y Z. Las mayúsculas y minúsculas no se ven afectadas.
-*
-* La salida irá seguida de una nueva línea
-*
+* Escriba un programa que reciba una cadena y la imprima reemplazando cada una 
+* de sus letras por la letra 13 espacios adelante en orden alfabético.
+* 'z' se convierte en 'm' y 'Z' en 'M'. 
+* La salida irá seguida de una nueva línea.
 * Si el número de argumentos no es 1, el programa muestra una nueva línea.
 */
 
