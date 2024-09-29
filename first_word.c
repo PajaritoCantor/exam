@@ -6,7 +6,7 @@
 /*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:24:38 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/09/28 22:03:25 by jurodrig         ###   ########.fr       */
+/*   Updated: 2024/09/28 22:22:25 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,25 @@ una nueva línea.
 
 int ft_isspace(int c) 
 {
-    return (c == 32 || c == 9);
+    return (c == 32 || c == 9 || c == 10 || c == 13 || c == 12 || c == 11);
 }
 
 int main(int ac, char **av) 
 {
     int i = 0;
 
-    if (ac == 2) {
-        // Saltar espacios y tabulaciones iniciales
+    if (ac == 2) 
+    {
         while (ft_isspace(av[1][i])) 
 		{
             i++;
         }
-
-        // Imprimir la primera palabra
         while (av[1][i] != '\0' && !ft_isspace(av[1][i])) 
 		{
             write(1, &av[1][i], 1);
             i++;
         }
     }
-
-    // Nueva línea al final
     write(1, "\n", 1);
     return (0);
 }

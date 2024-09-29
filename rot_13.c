@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rot_13.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:11:44 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/09/19 01:04:08 by jurodrig         ###   ########.fr       */
+/*   Updated: 2024/09/29 02:28:41 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,35 @@
 
 #include <unistd.h>
 
-int	main(int ac, char **av)
+int	ft_isalpha(char c)
+{
+	return (c >= 'a' || c <= 'm' || (c >= 'A' || c <= 'M'));
+}
+
+int	main(int argc, char **av)
 {
 	int	i;
 
 	i = 0;
-	if (ac == 2)
+	if (argc > 1)
 	{
-		while(av[1][i] != '\0')
+		while (av[1][i])
 		{
-			if ((av[1][i] >= 'a' && av[1][i] <= 'm' || (av[1][i] >= 'A' && av[1][i] <= 'M'))
-				av[1][i] = av[1][i] + 13;
-			else if ((av[1][i] >= 'n' && av[1][i] <= 'z' || (av[1][i] >= 'N' && av[1][i] <= 'Z'))
-				av[1][i] = av[1][i] - 13;
-			write(1, &av[1][i], 1);
-			i++
+			if (ft_isalpha(av[1][i]))
+			{
+				if (av[1][i] >= 'a' && av[1][i] <= 'm' || av[1][i] >= 'A' && av[1][i] <= 'M')
+				{	
+					av[1][i] += 13;
+				}
+				else
+				{
+					av[1][i] -= 13; 
+				}
+			}
+			write (1, &av[1][i], 1);
+			i++;
 		}
-	write(1, "\n", 1);
+	}
+	write (1, "\n", 1);
+	return (0);
 }
