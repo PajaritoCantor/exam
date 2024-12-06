@@ -6,7 +6,7 @@
 /*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:50:43 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/06 13:16:18 by jurodrig         ###   ########.fr       */
+/*   Updated: 2024/12/06 13:19:05 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ $>
 
 #include <unistd.h>
 
-void	write_nbr(int number)
+void	write_nbr(int nbr)
 {
 	char	str[10] = "123456789";
 
-	if (number > 9)
-		write_nbr(number / 10);
-	write(1, &str[number % 10], 1);
+	if (nbr > 9)
+		write_nbr(nbr / 10);
+	write(1, &str[nbr % 10], 1);
 }
 
 int	main(void)
