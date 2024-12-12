@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 11:39:18 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/12 16:19:26 by jurodrig         ###   ########.fr       */
+/*   Created: 2024/12/12 13:50:13 by jurodrig          #+#    #+#             */
+/*   Updated: 2024/12/12 16:18:22 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-char	*ft_strpbrk(const char *s1, const char *s2)
+char	*ft_strrev(char *str)
 {
-	int	i;
+	int		i;
+	size_t	length;
+	char	temp;
 
 	i = 0;
-	if (!s1 && !s2)
-		return (0);
-	while (*s1)
+	length = 0;
+	while (str[length])
+		length++;
+	while (length--)
 	{
-		while (s2[i])
-		{
-			if (s1[i] == s2[i])
-				return ((char *)s1);
-			i++;
-		}
-		s1++;
+		temp = str[i];
+		str[i] = str[length];
+		str[length] = temp;
+		i++;
+		length--;
 	}
-	return (NULL);
+	return (str);
 }
-/*
 int	main(void)
 {
-	const char	*s1 = "hello world";
-	const char	*s2 = "aeiou";
-	char		*result;
+	char str[] = "hola";
 
-	result = ft_strpbrk(s1, s2);
-	printf("Primera coincidencia: %c en la posición: %ld\n", *result, result
-		- s1);
+	ft_strrev(str);
+	printf("%s\n", str);
 }
-*/
