@@ -6,7 +6,7 @@
 /*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:06:04 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/06 16:17:34 by jurodrig         ###   ########.fr       */
+/*   Updated: 2024/12/15 19:53:21 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 char	*ft_strcpy(char *s1, char *s2)
 {
-	int i;
+	char *ptr = s1;
 
-	i = 0;
 	while (*s2)
 	{
 		*s1 = *s2;
+		ptr++;
 		s2++;
 	}
-	*s1 = '\0';
+	*ptr = '\0';
 	return (s1);
 }
