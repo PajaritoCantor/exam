@@ -6,7 +6,7 @@
 /*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:43:16 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/16 11:01:07 by jurodrig         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:24:04 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ de lo contrario retorna 0.
 int	is_power_of_2(unsigned int n);
 */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 int	is_power_of_2(unsigned int n)
@@ -26,3 +28,15 @@ int	is_power_of_2(unsigned int n)
 		return (0);
 	return ((n & (n - 1)) == 0);
 }
+/*
+int	main(int ag, char **av)
+{
+	int	result;
+
+	if (ag == 2)
+	{
+		result = is_power_of_2(atoi(av[1]));
+		printf("%u", result);
+	}
+}
+*/
