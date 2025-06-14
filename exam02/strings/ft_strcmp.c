@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 16:33:20 by jurodrig          #+#    #+#             */
-/*   Updated: 2025/06/07 02:48:25 by juan             ###   ########.fr       */
+/*   Created: 2025/06/11 04:58:33 by juan              #+#    #+#             */
+/*   Updated: 2025/06/12 02:20:50 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-Escriba una función que intercambie el contenido de dos enteros
-cuyas direcciones se pasan como parámetros.
-
-*/
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_swap(int *a, int *b)
+int ft_strncmp(char *s1, char *s2)
 {
-	int	temp;
-
-	temp = *b;
-	*b = *a;
-	*a = temp;
+    while (*s1 && *s2 && *s1 == *s2)
+    { 
+        s1++;
+        s2++;
+    }
+    return (*s1 - *s2);
 }
-/*
-int	main(void)
+int main (int ac, char **av)
 {
-	int	a;
-	int	b;
-
-	a = 1;
-	b = 2;
-	ft_swap(&a, &b);
-	printf("cambia %d a %d? \n", a, b);
-	return (1);
+    if (ac == 3)
+        printf("%d\n", ft_strncmp(av[1], av[2]));
+    return 0;
 }
-*/
