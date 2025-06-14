@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 11:39:18 by jurodrig          #+#    #+#             */
-/*   Updated: 2025/06/12 15:41:33 by jurodrig         ###   ########.fr       */
+/*   Created: 2025/06/12 15:09:25 by jurodrig          #+#    #+#             */
+/*   Updated: 2025/06/12 19:26:21 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,37 +26,31 @@ VALOR DE RETORNO
 La función strpbrk() devuelve un puntero al byte en s que coincide con uno de los bytes de accept, o NULL si no se encuentra dicho byte.
 */
 
+#include <unistd.h>
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strpbrk(const char *s1, const char *s2)
+char    *strpbrk(const char *s, const char *accept)
 {
-	int	i;
-
-	i = 0;
-	if (!s1 && !s2)
-		return (0);
-	while (*s1)
-	{
-		while (s2[i])
-		{
-			if (s1[i] == s2[i])
-				return ((char *)s1);
-			i++;
-		}
-		s1++;
-	}
-	return (NULL);
+    while (*s)
+    {
+        const char *temp = accept;
+        while (*temp)
+        {
+            if (*s == *temp)
+                return (char *)s;
+        temp++;
+        }
+        s++;
+    }
+    return NULL;
 }
-/*
-int	main(void)
+
+int main (int ac, char **av)
 {
-	const char	*s1 = "hello world";
-	const char	*s2 = "aeiou";
-	char		*result;
-
-	result = ft_strpbrk(s1, s2);
-	printf("Primera coincidencia: %c en la posición: %ld\n", *result, result
-		- s1);
+    if (ac == 3)
+    {
+        const char *str = strpbrk(av[1], av[2]);
+        printf("%c\n", *str);
+        return 0;
+    }
 }
-*/

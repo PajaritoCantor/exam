@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 02:40:22 by juan              #+#    #+#             */
-/*   Updated: 2025/06/10 02:47:20 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/12 19:25:33 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,22 @@ $
 
 */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int ac, char **av)
+int	main(int ag, char **av)
 {
-       if (ac == 4)
-       {
-          if (av[2][0] == 43)
-            printf("%d", atoi(av[1]) + atoi(av[3]));
-       }
-       printf("\n");
-       return 0; 
+	if (ag == 4)
+	{
+		if (av[2][0] == 42)
+			printf("%d", (atoi(av[1]) * atoi(av[3])));
+		if (av[2][0] == 43)
+			printf("%d", (atoi(av[1]) + atoi(av[3])));
+		if (av[2][0] == 45)
+			printf("%d", (atoi(av[1]) - atoi(av[3])));
+		if (av[2][0] == 47)
+			printf("%d", (atoi(av[1]) / atoi(av[3])));
+	}
+	printf("\n");
+	return (0);
 }

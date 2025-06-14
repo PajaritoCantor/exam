@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 15:55:49 by juan              #+#    #+#             */
-/*   Updated: 2025/06/07 18:57:25 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/12 19:18:27 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(void)
 */
 
 #include <unistd.h>
+#include <stdio.h>
 
 char    *rev_print(char *str)
 {
