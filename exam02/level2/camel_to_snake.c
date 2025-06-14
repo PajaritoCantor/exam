@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camel_to_snake.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:46:57 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/16 15:45:55 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/06/09 21:45:50 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ $>./camel_to_snake "helloWorld" | cat -e
 hello_world$
 $>./camel_to_snake | cat -e
 $
-
-
 */
 
 #include <unistd.h>

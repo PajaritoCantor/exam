@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/06 16:33:20 by jurodrig          #+#    #+#             */
-/*   Updated: 2025/06/07 02:48:25 by juan             ###   ########.fr       */
+/*   Created: 2025/06/12 02:23:02 by juan              #+#    #+#             */
+/*   Updated: 2025/06/12 04:03:48 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-Escriba una función que intercambie el contenido de dos enteros
-cuyas direcciones se pasan como parámetros.
-
-*/
+#include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
 
-void	ft_swap(int *a, int *b)
+char    *ft_strdup(char *src)
 {
-	int	temp;
-
-	temp = *b;
-	*b = *a;
-	*a = temp;
+    char *dup;
+    char *start;
+    int len = 0;
+    
+    while (src[len])
+        len++;
+    dup = malloc(len + 1);
+    if (!dup)
+        return NULL;
+    start = dup;
+    while (*src)
+        *dup++ = *src++;
+    *dup = '\0';
+    return (start);
 }
-/*
-int	main(void)
+
+int main ()
 {
-	int	a;
-	int	b;
+    char *src = "hola";
 
-	a = 1;
-	b = 2;
-	ft_swap(&a, &b);
-	printf("cambia %d a %d? \n", a, b);
-	return (1);
+    char *dup = ft_strdup(src);
+    printf("%s", dup);
+    return 0;
 }
-*/
