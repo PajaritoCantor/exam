@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:36:16 by juan              #+#    #+#             */
-/*   Updated: 2025/06/14 04:09:01 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/15 02:41:49 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ Si la matriz está vacía, la función devuelve 0.
 
 int max(int *tab, unsigned int len)
 {
-    
     if (len == 0)
         return (0);
-    
+
     int *end = tab + len;
     int max = *tab;
 

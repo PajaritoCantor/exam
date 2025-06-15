@@ -6,7 +6,7 @@
 /*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 19:30:16 by jurodrig          #+#    #+#             */
-/*   Updated: 2025/06/12 21:49:28 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/06/14 19:39:44 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int main (int ac, char **av)
 {
     if (ac == 2)
     {
-        char *str = ft_strrev
+        char *str = ft_strrev(av[1]);
+        printf("%s\n", str);
+        return 0;
     }
 }
