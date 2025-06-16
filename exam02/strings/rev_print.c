@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 15:55:49 by juan              #+#    #+#             */
-/*   Updated: 2025/06/12 19:18:27 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/06/16 12:35:42 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char    *rev_print(char *str)
         end++;
     while (end != str)
         write(1, --end, 1);
-    return (str);   
+        return (str);   
 }
 int	main(void)
 {
