@@ -52,7 +52,7 @@ $>
 
 void	write_nbr(int nbr)
 {
-	char	str[10] = "123456789";
+	char	str[10] = "0123456789";
 
 	if (nbr > 9)
 		write_nbr(nbr / 10);
