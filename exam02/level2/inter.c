@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inter.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 17:32:21 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/16 10:15:56 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/06/16 14:41:52 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	main(int ag, char **av)
 	unsigned char	seen[256] = {0};
 
 	i = 0;
-	j = 0;
 	if (ag == 3)
 	{
 		while (av[1][i])
 		{
+			j = 0;
 			while (av[2][j])
 			{
 				if (av[1][i] == av[2][j])

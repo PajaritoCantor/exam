@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wdmatch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 22:31:56 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/17 14:10:01 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/06/16 19:25:41 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,12 @@ $
 
 #include <unistd.h>
 
-int	main(int ag, char **av)
+int	main(int ac, char **av)
 {
-	int i;
-	int j;
+	int i = 0;
+	int j = 0;
 
-	i = 0;
-	j = 0;
-	if (ag == 3)
+	if (ac == 2)
 	{
 		while (av[2][j])
 		{
@@ -53,10 +51,11 @@ int	main(int ag, char **av)
 				i++;
 			j++;
 		}
-		if (av[1][i] == '\0')
+		if (!av[1][i])
 			i = 0;
 		while (av[1][i])
-			write(1, &av[1][i++], 1);
+			write(1, &av[1][i], 1);
 	}
 	write(1, "\n", 1);
+	return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   union.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 19:36:28 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/16 22:30:11 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/06/16 14:52:22 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,11 @@ $>
 
 int	main(int ag, char **av)
 {
-	int i = 0;
-	int j = 0;
 	unsigned int seen[256] = {0};
 
 	if (ag == 3)
 	{
+		int i = 0;
 		while (av[1][i])
 		{
 			if (!seen[(unsigned char)av[1][i]])
@@ -52,6 +51,7 @@ int	main(int ag, char **av)
 			}
 			i++;
 		}
+		int j = 0;
 		while (av[2][j])
 		{
 			if (!seen[(unsigned char)av[2][j]])
