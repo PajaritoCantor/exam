@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   is_power_of_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 10:43:16 by jurodrig          #+#    #+#             */
-/*   Updated: 2024/12/16 15:24:04 by jurodrig         ###   ########.fr       */
+/*   Created: 2025/06/16 19:32:15 by juan              #+#    #+#             */
+/*   Updated: 2025/06/17 00:28:54 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 /*
 Escribe una función que determine si el numero dado es una potencia de 2.
@@ -20,23 +22,19 @@ int	is_power_of_2(unsigned int n);
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
-int	is_power_of_2(unsigned int n)
+int is_power_of_2(unsigned int n)
 {
-	if (n == 0)
-		return (0);
-	return ((n & (n - 1)) == 0);
+    if (n == 0)
+        return (0);
+    return ((n & (n - 1)) == 0);
 }
-/*
-int	main(int ag, char **av)
+int main (int ac, char **av)
 {
-	int	result;
-
-	if (ag == 2)
-	{
-		result = is_power_of_2(atoi(av[1]));
-		printf("%u", result);
-	}
+    if (ac == 2)
+    {
+        unsigned int n = is_power_of_2(atoi(av[1]));
+        printf("%d\n", n);
+    }
+    return 0;
 }
-*/
