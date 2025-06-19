@@ -6,14 +6,15 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 03:50:44 by jurodrig          #+#    #+#             */
-/*   Updated: 2025/06/16 14:04:56 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/19 12:10:17 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 DESCRIPCIÓN
 
-La función strcspn() calcula la longitud del segmento inicial de s, que consta únicamente de bytes que no están en reject.
+La función strcspn() calcula la longitud del segmento inicial de s, 
+que consta únicamente de bytes que no están en reject.
 
 VALOR DEVUELTO
 
@@ -37,8 +38,7 @@ size_t  strcspn(const char *s, const char *reject)
     }
     p++;
     }
-    return (p  - s);
-    
+    return (p  - s);  
 }
 
 int main (int ac, char **av)
