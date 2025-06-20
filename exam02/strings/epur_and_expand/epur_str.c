@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 18:16:08 by juan              #+#    #+#             */
-/*   Updated: 2025/06/19 15:40:16 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/20 13:01:56 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,13 @@ $>
 
 int main (int ac, char **av)
 {
-    int i;
+    int i = 0;
     int aux = 0;
-
+    
     if (ac == 2)
     {
-        i = 0;
         while (av[1][i] == 32 || av[1][i] == 9)
             i++;
-            
         while (av[1][i])
         {
             if (av[1][i] == 32 || av[1][i] == 9)
@@ -62,7 +60,7 @@ int main (int ac, char **av)
             }
             i++;
         }
+        write(1, "\n", 1);
+        return 0;
     }
-    write(1, "\n", 1);
-    return 0;
 }

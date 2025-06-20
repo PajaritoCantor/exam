@@ -33,9 +33,9 @@ size_t  strcspn(const char *s, const char *reject)
         while(*r)
         {
            if (*p == *r)
-            return (p - s);
-        r++; 
-    }
+                return (p - s);
+           r++; 
+        }
     p++;
     }
     return (p  - s);  
