@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 14:32:08 by juan              #+#    #+#             */
-/*   Updated: 2025/06/20 14:56:04 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/21 00:49:45 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int ft_atoi_base(const char *str, int str_base)
     }
     return (result * sign);
 }
+
 int main (int ac, char **av)
 {
     if (ac == 3)

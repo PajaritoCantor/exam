@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 20:53:24 by juan              #+#    #+#             */
-/*   Updated: 2025/06/19 22:50:30 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/22 02:20:39 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,14 @@ unsigned char   print_bits(unsigned char octet)
 
 unsigned char reverse_bits(unsigned char octet)
 {
-    return  ((octet & 0b00000001) << 7)  |
+    return  ((octet & 0b00000001) << 7) |
             ((octet & 0b00000010) << 5) |
             ((octet & 0b00000100) << 3) |
             ((octet & 0b00001000) << 1) |
-            ((octet & 0b00010000) << 1) |
-            ((octet & 0b00100000) << 3) |
-            ((octet & 0b01000000) << 5) |
-            ((octet & 0b10000000) << 7);
+            ((octet & 0b00010000) >> 1) |
+            ((octet & 0b00100000) >> 3) |
+            ((octet & 0b01000000) >> 5) |
+            ((octet & 0b10000000) >> 7);
 }
 int main (int ac, char **av)
 {

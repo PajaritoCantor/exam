@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 00:24:33 by juan              #+#    #+#             */
-/*   Updated: 2025/06/19 12:31:12 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/20 14:09:38 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@ int ft_atoi(const char *str)
     int result = 0;
 
     while (*str >= 48 && *str <= 57)
+    {
         result = result * 10 + *str++ - 48;
+    }
     return (result);
 }
 void    ft_putnbr(int n)
 {
-    char    number [] = "0123456789";
+    char number [] = "0123456789";
 
     if (n >= 10)
         ft_putnbr(n / 10);
@@ -67,12 +69,12 @@ int main (int ac, char **av)
 {
     int i = 2;
     int sum = 0;
-    int n;
+    int number;
 
     if (ac == 2)
     {
-        n = ft_atoi(av[1]);
-        while (i <= n)
+        number = ft_atoi(av[1]);
+        while (i <= number)
         {
             if (is_prime(i))
                 sum += i;
@@ -80,7 +82,7 @@ int main (int ac, char **av)
         }
         ft_putnbr(sum);
     }
-    else
+    else 
         ft_putnbr(0);
     write(1, "\n", 1);
     return 0;
