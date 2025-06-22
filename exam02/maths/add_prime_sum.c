@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 00:24:33 by juan              #+#    #+#             */
-/*   Updated: 2025/06/20 14:09:38 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/23 01:18:39 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@ Archivos esperados: add_prime_sum.c
 Funciones permitidas: write, exit
 --------------------------------------------------------------------------------
 
-Escriba un programa que tome un entero positivo como argumento y muestre la suma de todos los números primos inferiores o iguales a él, seguida de un salto de línea.
+Escriba un programa que tome un entero positivo 
+como argumento y muestre la suma de todos los números 
+primos inferiores o iguales a él, 
+seguida de un salto de línea.
 
-Si el número de argumentos no es 1, o el argumento no es un número positivo, simplemente muestre 0 seguido de un salto de línea.
+Si el número de argumentos no es 1, 
+o el argumento no es un número positivo, 
+simplemente muestre 0 seguido de un salto de línea.
 
 Sí, los ejemplos son correctos.
 
@@ -40,19 +45,10 @@ int ft_atoi(const char *str)
     int result = 0;
 
     while (*str >= 48 && *str <= 57)
-    {
         result = result * 10 + *str++ - 48;
-    }
     return (result);
 }
-void    ft_putnbr(int n)
-{
-    char number [] = "0123456789";
 
-    if (n >= 10)
-        ft_putnbr(n / 10);
-    write(1, &number[n % 10], 1);
-}
 int is_prime(int n)
 {
     int i = 2;
@@ -65,16 +61,27 @@ int is_prime(int n)
     }
     return 1;
 }
+
+void    ft_putnbr(int n)
+{
+    char number[] = "0123456789";
+
+    if (n >= 10)
+        ft_putnbr(n / 10);
+    write(1, &number[n % 10], 1);
+}
+
 int main (int ac, char **av)
 {
     int i = 2;
     int sum = 0;
-    int number;
+    int n;
 
     if (ac == 2)
     {
-        number = ft_atoi(av[1]);
-        while (i <= number)
+        n = ft_atoi(av[1]);
+
+        while (i <= n)
         {
             if (is_prime(i))
                 sum += i;
@@ -82,7 +89,7 @@ int main (int ac, char **av)
         }
         ft_putnbr(sum);
     }
-    else 
+    else
         ft_putnbr(0);
     write(1, "\n", 1);
     return 0;
