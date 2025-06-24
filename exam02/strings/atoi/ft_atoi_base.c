@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 14:32:08 by juan              #+#    #+#             */
-/*   Updated: 2025/06/23 13:15:45 by juan             ###   ########.fr       */
+/*   Updated: 2025/06/23 13:59:24 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,24 +46,27 @@ int ft_atoi_base(const char *str, int str_base)
         sign = -1;
         str++;
     }
-    
+
     while (*str)
     {
         if (*str >= 48 && *str <= 57)
             digit = *str - 48;
-        if (*str >= 65 && *str <= 90)
+        else if (*str >= 65 && *str <= 90)
             digit = *str - 65 + 10;
-        if (*str >= 97 && *str <= 122)
+        else if(*str >= 97 && *str <= 122)
             digit = *str - 97 + 10;
-            
+        else 
+            break ;
+
         if (digit >= str_base)
             break ;
 
         result = result * str_base + digit;
         str++;
     }
-        return (sign * result);
+    return (sign * result);
 }
+
 int main (int ac, char **av)
 {
     if (ac == 3)
