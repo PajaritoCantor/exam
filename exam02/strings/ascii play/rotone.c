@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotone.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 22:37:21 by juan              #+#    #+#             */
-/*   Updated: 2025/06/08 00:24:02 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/03 20:32:18 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,21 @@ $>
 
 int main (int ac, char **av)
 {
-    int i = 0;
 
     if (ac == 2)
     {
-        while (av[1][i])
+        int i = 0;
+        while(av[1][i])
         {
-            if (av[1][i] >= 97 && av[1][i] <= 121)
-                av[1][i] += 1;
-            else if (av[1][i] == 122)
-                av[1][i] -= 25;
-            else if (av[1][i] >= 65 && av[1][i] <= 89)
-                av[1][i] += 1;
-            else if (av[1][i] == 90)
-                av[1][i] -= 25;
-            write (1, &av[1][i], 1);
+            if(av[1][i] >= 'a' && av[1][i] <= 'z')
+                av[1][i] = (av[1][i] - 'a' + 1) % 26 + 'a';
+            else if(av[1][i] >= 'A' && av[1][i] <= 'Z')
+                av[1][i] = (av[1][i] - 'A' + 1) % 26 + 'A';
+            write(1, &av[1][i], 1);
             i++;
         }
+        
     }
     write(1, "\n", 1);
+    return 0;
 }
