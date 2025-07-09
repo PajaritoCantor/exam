@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lcm.c                                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 23:52:33 by juan              #+#    #+#             */
-/*   Updated: 2025/06/26 01:17:59 by juan             ###   ########.fr       */
+/*   Created: 2025/06/12 02:23:02 by juan              #+#    #+#             */
+/*   Updated: 2025/06/14 04:55:56 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
 
-unsigned int	lcm(int a, unsigned int b)
+char    *ft_strdup(char *src)
 {
-    if (a <= 0 || b <= 0)
-        return 0;
+    char *dup;
+    char *start;
+    int len = 0;
     
-    unsigned int x = a;
-    unsigned int y = b;
-    
-    while (y)
-    {
-        unsigned int tmp = y;
-        y = x % y;
-        x = tmp;
-    }
-    return (a / x) * b;
+    while (src[len])
+        len++;
+    dup = malloc(len + 1);
+    if (!dup)
+        return NULL;
+    start = dup;
+    while (*src)
+        *dup++ = *src++;
+    *dup = '\0';
+    return (start);
 }
 
 int main ()
 {
-    printf("%u\n", lcm(48, 18));
+    char *src = "hola";
+
+    char *dup = ft_strdup(src);
+    printf("%s", dup);
     return 0;
 }

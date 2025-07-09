@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:36:16 by juan              #+#    #+#             */
-/*   Updated: 2025/06/15 02:41:49 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:37:38 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,25 @@ Si la matriz está vacía, la función devuelve 0.
 int max(int *tab, unsigned int len)
 {
     if (len == 0)
-        return (0);
+        return 0;
 
-    int *end = tab + len;
-    int max = *tab;
-
+    int *end = tab + len; // mido la longitud sumando tab más la longitud
+    int max = *tab; // necesito una copia del puntero que a punta a tab para comparar 
+    
     while (tab < end)
     {
         if (*tab > max)
             max = *tab;
-        tab++;
+        tab++; // iterar tab para ir comparando con max
     }
     return (max);
 }
 
 int main ()
 {
-    int tab [] = {6, 8, 3, 5, 9, 1, 5};
-    int len = 7;
-    
-    printf("%d\n", max(tab, len));
-    return (0);
+    int tab [] = {1,2,3,4,5,6};
+    int len = 6;
+
+    printf ("%d\n", max(tab, len));
+    return 0;
 }
