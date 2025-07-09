@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 23:52:33 by juan              #+#    #+#             */
-/*   Updated: 2025/06/26 01:17:59 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/09 10:11:00 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ unsigned int	lcm(int a, unsigned int b)
 {
     if (a <= 0 || b <= 0)
         return 0;
-    
+
+    if (a > 2147483647 || b > 2147483647)
+        return 0;
+   
     unsigned int x = a;
     unsigned int y = b;
     
