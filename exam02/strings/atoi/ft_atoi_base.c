@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 14:32:08 by juan              #+#    #+#             */
-/*   Updated: 2025/06/23 13:59:24 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/02 17:24:11 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,41 +37,42 @@ int ft_atoi_base(const char *str, int str_base);
 
 int ft_atoi_base(const char *str, int str_base)
 {
-    int result = 0;
     int sign = 1;
+    int result;
     int digit;
 
     if (*str == 45)
-    {
+    {    
         sign = -1;
         str++;
     }
-
+    
     while (*str)
     {
         if (*str >= 48 && *str <= 57)
             digit = *str - 48;
         else if (*str >= 65 && *str <= 90)
             digit = *str - 65 + 10;
-        else if(*str >= 97 && *str <= 122)
-            digit = *str - 97 + 10;
-        else 
+        else if (*str >= 97 && *str <= 122)
+            digit = *str - 65 + 10;
+        else
             break ;
-
+    
         if (digit >= str_base)
             break ;
 
+    while (*str)
         result = result * str_base + digit;
-        str++;
     }
-    return (sign * result);
+    return (result * sign);
 }
 
 int main (int ac, char **av)
 {
     if (ac == 3)
     {
-        int result = ft_atoi_base(av[1], atoi(av[2]));
+        int result = ft_atoi_base(av[1],atoi(av[2]));
+
         printf("%d\n", result);
     }
     return 0;
