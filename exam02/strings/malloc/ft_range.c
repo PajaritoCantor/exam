@@ -34,46 +34,46 @@ void ft_swap(int *a, int *b)
     (*a ^= *b),(*b ^= *a),(*a ^= *b); // swap directo | sort
 } 
 */
-int log10()
-{
-    
-}
+
+#include <stdlib.h>
+#include <stdio.h>
+
 int *ft_range(int start, int end)
 {
-    // exception in case where parameters logic are not respected
-    if (start > end)
-    {
-        int tmp = start;
-        start = end;
-        end = tmp;
-    }
-    // 
-    //ace601(5) - afd4e3(4) + 1 = 7;
-    int len = end - start + 1;
-    
-    int *arr;
-    if(!(arr = malloc(len * sizeof(int))))
-        return NULL;
-        
-    int *ptr = arr;
-    while(start <= end)
-        *ptr++ = start++;
-    return (arr);
+    int len = 0;
+
+    if (start <= end)
+        len = end - start + 1;
+    else
+        len = start - end + 1;
+
+    int *range = malloc (sizeof(int) * len);
+    int *ptr = range;
+    if (start <= end)
+        while (start <= end)
+            *ptr++ = start++;
+    else
+        while (start >= end)
+            *ptr++ = start--;
+    return (range);
 }
 
-int main()
+int main ()
 {
-    int start = -4;
-    int end = 4;
+    int start = 1;
+    int end = 8;
     int *range = ft_range(start, end);
-    int len = end - start + 1;
+    int len;
     int i = 0;
 
+    if (start <= end)
+        len = end - start + 1;
+    else
+        len = start - end + 1;
+    
     while (i < len)
-    {
-        printf("%d\n", range[i]);
-        i++;
-    }
-    free(range);
+        printf("%d\n", range[i++]);
+
+    free (range);
     return 0;
 }

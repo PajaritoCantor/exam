@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 15:23:51 by juan              #+#    #+#             */
-/*   Updated: 2025/07/03 11:45:46 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/03 11:53:34 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int *ft_rrange(int start, int end)
         end = tmp; 
     }
     int len = (start - end) + 1;
-    int *arr = malloc(sizeof(int) * len);
-    if (!arr)
+    int *arr;
+    if(!(arr = (malloc(sizeof(int) * len))))
         return NULL;
     int *ptr = arr;
-    while (end >= start)
+    while (start >= end)
     {
         *ptr = start;
         ptr++;
@@ -59,26 +59,19 @@ int *ft_rrange(int start, int end)
 #include <stdio.h>
 #include <stdlib.h>
 
-int *ft_range(int start, int end); // Declaración previa
-
-int main(void)
+int main()
 {
-    int start = 3;
-    int end = 7;
-    int len;
+    int start = 4;
+    int end = -4;
+    int *range = ft_rrange(start, end);
+    int len = start - end + 1;
     int i = 0;
-    int *arr;
 
-    if (start > end)
-        len = start - end + 1;
-    else
-        len = end - start + 1;
-    arr = ft_range(start, end);
     while (i < len)
     {
-        printf("%d\n", arr[i]);
+        printf("%d\n", range[i]);
         i++;
     }
-    free (arr);
+    free(range);
     return 0;
 }
