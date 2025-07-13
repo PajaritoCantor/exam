@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 16:23:50 by juan              #+#    #+#             */
-/*   Updated: 2025/06/26 20:23:47 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/03 17:44:16 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,26 @@ $>
 
 int main (int ac, char **av)
 {
-    if (ac >= 1)
+    if (ac > 2)
     {
-        int j = 1;
+        int j = 0;
         while (av[j])
         {
             int i = 0;
             while (av[j][i])
             {
-                if (i == 0 || av[j][i - 1] == 32 || av[j][i - 1] == 9)
+                if (i == 0 || av[j][i - 1] == 32 || av[j][i] == 9)
                 {
-                    if ((av[j][i] >= 97 && av[j][i] <= 122))
+                    if (av[j][i] >= 97 && av[j][i] <= 122)
                         av[j][i] -= 32;
                 }
-                if ((av[j][i] >= 65 && av[j][i] <= 90))
+                else if (av[j][i] >= 65 && av[j][i] <= 90)
                     av[j][i] += 32;
-                write(1, &av[j][i++], 1);
+                write(1, &av[j][i], 1);
+                i++;
             }
-            write(1, "\n", 1);
+             if (av[j + 1])
+                write(1, "\n", 1); 
             j++;
         }
     }

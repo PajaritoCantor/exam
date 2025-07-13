@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 01:27:11 by juan              #+#    #+#             */
-/*   Updated: 2025/06/26 01:59:16 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/03 15:52:44 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,20 @@ $>
 
 #include <unistd.h>
 
-void     ft_putnbr(int n)
+void    putnbr(int n)
 {
-    char number[] = "0123456789";
+    char str [] = "0123456789";
 
-    if(n >= 10)
-        ft_putnbr(n / 10); 
-    write(1, &number[n % 10], 1); 
+    if (n >= 10)
+        putnbr(n / 10);
+    write(1, &str[n % 10], 1);
 }
-int main(int ac, char **av)
+
+
+int main (int ac, char **av)
 {
     (void)av;
-    if(ac > 2)
-    {
-        ft_putnbr(ac - 1); 
-    }
-    if (ac <= 2)
-        ft_putnbr(0); 
-    write(1, "\n" , 1); 
-    
-    return 0; 
+    putnbr(ac - 1);
+    write(1, "\n", 1);
+    return 0;
 }

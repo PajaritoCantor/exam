@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 08:23:43 by juan              #+#    #+#             */
-/*   Updated: 2025/06/25 18:19:59 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/03 13:17:58 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ Si el número de parámetros no es 2, el programa muestra un salto de línea.
 
 Ejemplos:
 
-$>./hidenp "fgex.;" "tyf34gdgf;'ektufjhgdgex.;.;rtjynur6" | gato -e
+$>./hidenp "fgex.;" "tyf34gdgf;'ektufjhgdgex.;.;rtjynur6" | cat -e
 1$
-$>./hidenp "abc" "2altrb53c.sse" | gato -e
+$>./hidenp "abc" "2altrb53c.sse" | cat -e
 1$
-$>./hidenp "abc" "btarc" | gato -e
+$>./hidenp "abc" "btarc" | cat -e
 0$
-$>./hidenp | gato -e
+$>./hidenp | cat -e
 $
 $>
 */
@@ -49,9 +49,6 @@ int main (int ac, char **av)
     {
         int i = 0;
         int j = 0;
-        
-        if (ac == 3)
-        {
         while (av[2][j])
         {
             if (av[1][i] == av[2][j])

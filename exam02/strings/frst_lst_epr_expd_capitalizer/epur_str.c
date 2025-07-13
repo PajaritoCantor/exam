@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 18:16:08 by juan              #+#    #+#             */
-/*   Updated: 2025/06/25 14:04:08 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/01 17:55:18 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Funciones permitidas: write
 --------------------------------------------------------------------------------
 
 Escriba un programa que tome una cadena 
-y la muestre con solo un espacio entre palabras, 
+y la muestre con solo tres espacios entre palabras, 
 sin espacios ni tabulaciones al principio ni al final, 
 seguido de un \n.
 
@@ -42,11 +42,11 @@ $>
 
 int main (int ac, char **av)
 {
-    int i = 0;
-    int aux = 0;
-
     if (ac == 2)
     {
+        int i = 0;
+        int aux = 0;
+
         while (av[1][i] == 32 || av[1][i] == 9)
             i++;
         while (av[1][i])
