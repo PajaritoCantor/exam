@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 14:32:08 by juan              #+#    #+#             */
-<<<<<<< HEAD:exam02/strings/atoi_itoa_split/ft_atoi_base.c
-/*   Updated: 2025/07/03 08:30:34 by juan             ###   ########.fr       */
-=======
-/*   Updated: 2025/07/02 17:24:11 by jurodrig         ###   ########.fr       */
->>>>>>> 4e2e2b58486711bcaa6f9993dfef52ac1d9394f6:exam02/strings/atoi/ft_atoi_base.c
+/*   Updated: 2025/07/17 01:50:52 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,67 +32,50 @@ Su función debe declararse de la siguiente manera:
 int ft_atoi_base(const char *str, int str_base);
 */
 
-#include <stdlib.h>
+#include <unistd.h>
+#include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
+
+int ft_value(char c)
+{
+    if (c >= 48 && c <= 57)
+        return (c - 48);
+    else if (c >= 97 && c <= 102)
+        return (c - 97 + 10);
+    else if (c >= 65 && c <= 70)
+        return (c - 65 + 10);
+    return (-1);
+}
+
 
 int ft_atoi_base(const char *str, int str_base)
 {
+    int result = 0;
     int sign = 1;
-<<<<<<< HEAD:exam02/strings/atoi_itoa_split/ft_atoi_base.c
-    char digit;
-=======
-    int result;
-    int digit;
->>>>>>> 4e2e2b58486711bcaa6f9993dfef52ac1d9394f6:exam02/strings/atoi/ft_atoi_base.c
+    int digit = 0;
 
     if (*str == 45)
-    {    
         sign = -1;
-        sign++;
-    }
-    
+    if (*str == 45 || *str == 43)
+        str++;
+        
     while (*str)
     {
-        if (*str >= 48 && *str <= 57)
-            digit = *str - 48;
-        else if (*str >= 65 && *str <= 90)
-<<<<<<< HEAD:exam02/strings/atoi_itoa_split/ft_atoi_base.c
-            digit = *str - 48 + 10;
-        else if (*str >= 97 && *str <= 122)
-            digit = *str - 48 + 10;
-=======
-            digit = *str - 65 + 10;
-        else if (*str >= 97 && *str <= 122)
-            digit = *str - 65 + 10;
->>>>>>> 4e2e2b58486711bcaa6f9993dfef52ac1d9394f6:exam02/strings/atoi/ft_atoi_base.c
-        else
-            break ;
-    
-        if (digit >= str_base)
-            break ;
-<<<<<<< HEAD:exam02/strings/atoi_itoa_split/ft_atoi_base.c
-        
-=======
-
-    while (*str)
->>>>>>> 4e2e2b58486711bcaa6f9993dfef52ac1d9394f6:exam02/strings/atoi/ft_atoi_base.c
-        result = result * str_base + digit;
+    digit = ft_value (*str);
+    if (digit < 0 || digit >= str_base)
+        break ;
+    result = result * str_base + digit;
+    str++;
     }
-    return (result * sign);
+    return (sign * result);
 }
-
 int main (int ac, char **av)
 {
     if (ac == 3)
     {
-<<<<<<< HEAD:exam02/strings/atoi_itoa_split/ft_atoi_base.c
     int result = ft_atoi_base(av[1], atoi(av[2]));
     printf("%d\n", result);
-=======
-        int result = ft_atoi_base(av[1],atoi(av[2]));
-
-        printf("%d\n", result);
->>>>>>> 4e2e2b58486711bcaa6f9993dfef52ac1d9394f6:exam02/strings/atoi/ft_atoi_base.c
     }
     return (0);
 }
