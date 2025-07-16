@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:42:49 by juan              #+#    #+#             */
-/*   Updated: 2025/06/26 21:08:35 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/16 19:01:43 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,28 @@ seconD tesT A littlE biT   moaR compleX$
 
 int main (int ac, char **av)
 {
-    if (ac >= 1)
+    if (ac > 1)
     {
-        int j = 1;
+        int j = 0;
         while (av[j])
         {
             int i = 0;
             while (av[j][i])
             {
-                if ((av[j][i] >= 65 && av[j][i] <= 90))
-                    av[j][i] += 32;
-                if ((av[j][i] >= 97 && av[j][i] <= 122) && (!av[j][i + 1] || av[j][i + 1] == 32 || av[j][i + 1] == 9))
+                if (!av[j][i + 1] || av[j][i + 1] == 32 || av[j][i + 1] == 9)
+                {
+                    if (av[j][i] >= 97 && av[j][i] <= 122)
                     av[j][i] -= 32;
+                }
+                else if (av[j][i] >= 65 && av[j][i] <= 90)
+                    av[j][i] += 32;
                 write(1, &av[j][i++], 1);
             }
             write(1, "\n", 1);
             j++;
         }
     }
-    write(1, "\n", 1);
+    else
+        write(1, "\n", 1);
     return 0;
 }
