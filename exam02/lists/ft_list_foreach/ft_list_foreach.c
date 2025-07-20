@@ -14,7 +14,7 @@
 
 void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-    while (begin_list)
+    while (begin_list->data)
     {
         (*f)(begin_list->data); // aplico la lista a los datos
         begin_list = begin_list->next; // declaro la lista al siguiente nodo (next)
