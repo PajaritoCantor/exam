@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 03:26:06 by juan              #+#    #+#             */
-/*   Updated: 2025/06/26 13:58:38 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/21 11:11:13 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,41 +53,45 @@ $>./tab_mult | cat -e
 $
 $>
 */
+
 #include <unistd.h>
 #include <stdio.h>
 
 int ft_atoi(const char *str)
 {
-    int result;
+    int result = 0;
 
     while (*str >= 48 && *str <= 57)
         result = result * 10 + *str++ - 48;
     return (result);
 }
+
 void    ft_putnbr(int n)
 {
     char str [] = "0123456789";
 
-    if (n >= 10);
+    if (n > 9)
         ft_putnbr(n / 10);
     write(1, &str[n % 10], 1);
 }
 
 int main (int ac, char **av)
 {
+    int i = 1;
+
     if (ac == 2)
     {
-        int nbr = ft_atoi(av[1]);
-        int i = 0;
+        int n = ft_atoi(av[1]);
         
         while (i <= 9)
         {
             ft_putnbr(i);
-            write(1, " x ", 1);
-            ft_putnbr(nbr);
-            write(1, " = ", 1);
-            ft_putnbr(i * nbr);
+            write(1, " x ", 3);
+            ft_putnbr(n);
+            write(1, " = ", 3);
+            ft_putnbr(i * n);
             write(1, "\n", 1);
+            i++;
         }
     }
     write(1, "\n", 1);

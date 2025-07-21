@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 01:27:11 by juan              #+#    #+#             */
-/*   Updated: 2025/07/03 15:52:44 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/21 11:22:39 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ el número de argumentos pasados,
 seguido de un salto de línea.
 
 Si no hay argumentos, 
-simplemente muestra un 0 seguido de un salto de línea.
+simplemente muestra un 0 
+seguido de un salto de línea.
 
 Ejemplo:
 
@@ -40,11 +41,10 @@ void    putnbr(int n)
 {
     char str [] = "0123456789";
 
-    if (n >= 10)
+    if (n > 9)
         putnbr(n / 10);
     write(1, &str[n % 10], 1);
 }
-
 
 int main (int ac, char **av)
 {
