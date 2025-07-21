@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 15:55:49 by juan              #+#    #+#             */
-/*   Updated: 2025/06/16 12:35:42 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/21 11:41:51 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ int	main(void)
 
 char    *rev_print(char *str)
 {
-    char *end = str;
+    char *len = str;
 
-    while (*end)
-        end++;
-    while (end != str)
-        write(1, --end, 1);
-        return (str);   
+    while (*len)
+        len++;
+    while (len != str)
+        write(1, --lenn, 1);
+      return (str);   
 }
 int	main(void)
 {

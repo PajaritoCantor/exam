@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 08:23:43 by juan              #+#    #+#             */
-/*   Updated: 2025/07/03 13:17:58 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/21 12:50:01 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ si es posible encontrar cada carácter de s1 en s2,
 en el mismo orden en que aparecen en s1.
 Además, la cadena vacía está oculta en cualquier cadena.
 
-Si el número de parámetros no es 2, el programa muestra un salto de línea.
+Si el número de parámetros no es 2, 
+el programa muestra un salto de línea.
 
 Ejemplos:
 
@@ -45,21 +46,18 @@ $>
 
 int main (int ac, char **av)
 {
+    int i = 0;
+    int j = 0;
+
     if (ac == 3)
     {
-        int i = 0;
-        int j = 0;
         while (av[2][j])
         {
-            if (av[1][i] == av[2][j])
+            if(av[2][j] == av[1][i])
                 i++;
             j++;
         }
         if (!av[1][i])
             write(1, "1", 1);
-        else
-            write(1, "0", 1);
     }
-    write(1, "\n", 1);
-    return 0;
 }
