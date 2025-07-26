@@ -1,7 +1,7 @@
 /*
 Escribe un programa que tome dos cadenas y muestre, sin dobles,
 los caracteres que aparecen en ambas cadenas,
-en el orden en que aparecen en la primera primera.
+en el orden en que aparecen en la primera.
 
 La visualización irá seguida de un \n.
 
@@ -23,7 +23,7 @@ $
 int main (int ac, char **av)
 {
     int i = 0;
-    unsigned char seen [256] = {0};
+    unsigned char seen [256] = {};
 
     if (ac == 3)
     {
@@ -39,7 +39,7 @@ int main (int ac, char **av)
                         write(1, &av[1][i], 1);
                         seen[(unsigned char)av[1][i]] = 1;
                     }
-                    break ;
+                    break ;   
                 }
                 j++;
             }
@@ -47,4 +47,5 @@ int main (int ac, char **av)
         }
     }
     write(1, "\n", 1);
+    return 0;
 }

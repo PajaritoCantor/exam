@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 14:38:41 by juan              #+#    #+#             */
-/*   Updated: 2025/07/03 09:10:27 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/22 11:07:28 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int	ft_list_size(t_list *begin_list)
     if (!begin_list)
         return 0;
     return (1 + ft_list_size(begin_list->next));
-}   
+}  
+ 
 t_list  *create_node(void *data)
 {
     t_list  *node = malloc(sizeof(t_list));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 19:30:16 by jurodrig          #+#    #+#             */
-/*   Updated: 2025/06/14 19:39:44 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/07/21 13:26:49 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,12 @@ char    *ft_strrev(char *str)
 {
     char    *start = str;
     char    *end = start;
-    char    temp;
     
     while (*end)
         end++;
     while (start < end)
     {
-        temp = *start;
+        char temp = *start;
         *start = *end;
         *end = temp;
         start++;

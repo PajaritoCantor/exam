@@ -6,16 +6,18 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 21:04:34 by jurodrig          #+#    #+#             */
-/*   Updated: 2025/06/16 10:44:03 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/21 18:18:49 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 
-La función strspn() calcula la longitud (en bytes) del segmento inicial de s, 
+La función strspn() calcula la longitud (en bytes) 
+del segmento inicial de s, 
 que consta únicamente de bytes de accept.
 
-La función strspn() devuelve el número de bytes del segmento inicial de s, 
+La función strspn() devuelve el número de bytes 
+del segmento inicial de s, 
 que consta únicamente de bytes de accept.
 */
 
@@ -24,8 +26,7 @@ que consta únicamente de bytes de accept.
 size_t  strspn(const char *s, const char *accept)
 {
     const char *p = s;
-
-    while (*s)
+    while (*p)
     {
         const char *a = accept;
         while (*a)

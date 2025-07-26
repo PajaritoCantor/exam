@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 14:42:47 by juan              #+#    #+#             */
-/*   Updated: 2025/06/16 14:50:38 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/21 13:10:47 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 Escriba un programa que tome dos cadenas y muestre, sin dobles, 
 el caracteres que aparecen en cualquiera de las cadenas.
 
-La pantalla se mostrará en el orden en que aparecen los caracteres en la línea de comando y
+La pantalla se mostrará en el orden en que aparecen
+los caracteres en la línea de comando y
 irá seguido de un \n.
 
 Si el número de argumentos no es 2, el programa muestra \n.
