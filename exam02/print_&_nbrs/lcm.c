@@ -6,9 +6,36 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 19:35:11 by juan              #+#    #+#             */
-/*   Updated: 2025/07/13 20:41:03 by juan             ###   ########.fr       */
+/*   Updated: 2025/07/29 17:01:00 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+Nombre de la asignación: mcm
+Archivos esperados: lcm.c
+Funciones permitidas:
+--------------------------------------------------------------------------------
+
+Escribe una función que tome dos enteros sin signo como parámetros y devuelva el mcm calculado de esos parámetros.
+
+El mcm (mínimo común múltiplo) de dos enteros distintos de cero es el menor entero positivo divisible por ambos.
+
+Un mcm se puede calcular de dos maneras:
+
+- Puedes calcular todos los múltiplos de cada entero hasta obtener un múltiplo común distinto de 0.
+
+- Puedes usar el mcd (máximo común divisor) de estos dos enteros y calcularlo de la siguiente manera:
+
+mcm(x, y) = | x * y | / mcd(x, y)
+
+| x * y | Significa "Valor absoluto del producto de x por y".
+
+Si al menos un entero es nulo, el mcm es igual a 0.
+
+Su función debe prototiparse de la siguiente manera:
+
+unsigned int mcm(unsigned int a, unsigned int b);
+*/
 
 unsigned int    lcm(unsigned int a, unsigned int b)
 {
