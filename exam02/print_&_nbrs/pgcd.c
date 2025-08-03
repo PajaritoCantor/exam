@@ -6,7 +6,7 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 02:27:09 by juan              #+#    #+#             */
-/*   Updated: 2025/07/03 15:56:11 by juan             ###   ########.fr       */
+/*   Updated: 2025/08/03 19:40:41 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ Archivos esperados: pgcd.c
 Funciones permitidas: printf, atoi, malloc, free
 --------------------------------------------------------------------------------
 
-Escriba un programa que tome dos cadenas que representen dos enteros estrictamente positivos que quepan en un entero.
+Escriba un programa que tome dos cadenas que representen dos enteros 
+estrictamente positivos que quepan en un entero.
 
-Muestre su máximo común denominador seguido de un salto de línea (siempre es un entero estrictamente positivo).
+Muestre su máximo común denominador seguido de un salto de línea 
+(siempre es un entero estrictamente positivo).
 
 Si el número de parámetros no es 2, muestre un salto de línea.
 
@@ -35,23 +37,23 @@ $> ./pgcd 17 3 | cat -e
 $> ./pgcd | cat -e
 */
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int main (int ac, char **av)
 {
     if (ac == 3)
     {
-        int n1 = atoi(av[1]);
-        int n2 = atoi(av[2]);
-        
-        while (n2)
+        int x = atoi(av[1]);
+        int y = atoi(av[2]);
+
+        while (y)
         {
-            int tmp = n2;
-            n2 = n1 % n2;
-            n1 = tmp;   
+            int tmp = y;
+            y = x % y;
+            x = tmp;
         }
-        printf ("%d", n1);
+        printf("%d", x);
     }
     printf("\n");
     return 0;
