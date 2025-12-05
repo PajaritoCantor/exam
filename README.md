@@ -18,12 +18,18 @@ Filter es un programa cuyo objetivo es leer texto desde la entrada estándar y r
              char    *input = malloc(1);
              int     buffer_size = 1024;
              char    *buffer = malloc(buffer_size);
+             int     b_read;
+             int    size_total = 0;
 
 * En **word** se guarda el argumento que contiene la **palabra a buscar**.
 * En **len_word** se calcula y guarda la longitud de la palabra. Luego se usará para comparar, reemplazar y avanzar en el texto.
 * En **char** ***input = malloc(1)** se reserva **1 byte** para iniciar el buffer donde se almacenará toda la entrada estándar.
   - Esto permite tener un puntero válido que luego crecerá con **realloc**
-* En **int buffer_size = 1024** se almacena el tamaño del bloque con el que se leerá del **stdin**. Se usa como tamaño de cada lectura realizada con **read()**
+* En **int buffer_size = 1024** se almacena el tamaño del bloque con el que se leerá del **stdin**. Se usa como tamaño de cada lectura realizada con **read()**.
 * En **char** ***buffer = malloc(buffer_size)** se reserva memoria para un buffer temporal donde se guardarán los datos leídos en cada llamada a **read()**. Luego ese contenido se copiará al buffer principal **input**.
+* **int b_read** almacena la cantidad de bytes que **read()** ha leído en cada iteración.
+* **int size_total** almacena cuántos bytes se han acumulado en **input** hasta el momento.
+
+
 </details>
 
