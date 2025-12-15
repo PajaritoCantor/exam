@@ -6,7 +6,7 @@
 /*   By: jurodrig <jurodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 19:19:49 by jurodrig          #+#    #+#             */
-/*   Updated: 2025/11/28 16:02:50 by jurodrig         ###   ########.fr       */
+/*   Updated: 2025/12/04 04:13:37 by jurodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	*ft_strdup(const char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[BUFFER_SIZE];
+	char static	buffer[BUFFER_SIZE];
 	char		line[70000];
 	static int	b_read;
 	static int	b_pos;
