@@ -40,7 +40,6 @@ _ ( )
 */
 #include <stdio.h>
 
-// 1. Función de validación (Se mantiene igual, ignora espacios automáticamente)
 int is_val(char *str){
     int opened = 0, closed = 0;
     for (int i = 0; str[i]; i++){
